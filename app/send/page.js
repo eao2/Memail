@@ -1,14 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/navigation';
+import { redirect } from 'next/navigation'
 import styles from './Style.module.scss'
 import { useSession } from "next-auth/react";
 import Link from 'next/link';
 import Image from 'next/image';
 
 export default function HomePage() {
-    const router = useRouter();
+    // const router = useRouter();
     const [subject, setSubject] = useState('');
     const [message, setMessage] = useState('');
     const [to, setTo] = useState('');
@@ -19,11 +20,11 @@ export default function HomePage() {
     const [errorMessage, setErrorMessage] = useState(null);
     const { data: session } = useSession();
 
-    var template
-    const handleFileUpload = async (event) => {
-        template = event.target.files[0];
+    // var template
+    // const handleFileUpload = async (event) => {
+    //     template = event.target.files[0];
   
-};
+// };
   const handleSubmit = async (event) => {
     event.preventDefault();
     setIsLoading(true);
@@ -167,6 +168,6 @@ export default function HomePage() {
     );
     }
     else if(!session){
-        router.push('./')
+        redirect('./', 'replace')
     }
 }
