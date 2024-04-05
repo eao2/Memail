@@ -1,0 +1,24 @@
+.appk{
+  width: 100%;
+  display: grid;
+  grid-template-rows: 3rem;
+  grid-template-columns: calc(100% - 3.5rem) 3rem;
+  gap: .5rem;
+  .input{
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    border: solid 1px rgba(0, 0, 0, 0.2);
+  }
+  .btn{
+    background-color: #3ccd94;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    svg{
+      fill: #fff;
+    }
+  }
+}
